@@ -1,0 +1,51 @@
+# Campus public-landmark rigid projection; terrain and game motion remain unverified.
+dijkstra_planner:
+  ros__parameters:
+    map_frame: arena_reference
+    demo_mode: false
+    player_id: 1
+    scene_units_per_m: 3.0
+    unity_to_reference:
+    - -0.0008608474967352598
+    - -0.9999996294707252
+    - 13.998143041025415
+    - 0.9999996294707253
+    - -0.0008608474967348818
+    - 9.103044551506406
+    json.array_key: enemies
+    json.id_key: number
+    json.x_key: x
+    json.z_key: z
+    json.health_key: health
+    json.attack_range_key: attack_range
+    json.frame_id: unity_world
+    enemy_timeout_s: 2.5
+    state_timeout_s: 0.5
+    replan_hz: 5.0
+    enemy_radius_m: 0.35
+    own_radius_m: 0.3
+    dynamic_margin_m: 0.15
+    broadcast_uncertainty_m: 0.2
+    enemy_speed_bound_mps: 3.0
+    outpost_radius_m: 0.6
+    base_radius_m: 0.9
+    use_enemy_healths: true
+    mission.tactical_selection: true
+    mission.strict_order: true
+    mission.gain.base: 100.0
+    mission.gain.unlock_base: 30.0
+    mission.gain.robot: 24.0
+    mission.gain.ammo: 45.0
+    mission.gain.health: 45.0
+    mission.cost.route: 1.0
+    mission.cost.target_health: 0.002
+    mission.switch_margin: 6.0
+    demo_start_x_m: 19.6
+    demo_start_y_m: 9.0
+    demo_goal_x_m: 26.6
+    demo_goal_y_m: 9.0
+    allow_live_alignment: false
+    uncertainty_as_cost: true
+    uncertainty_cost_weight: 8.0
+    wall_preference_distance_m: 0.6
+    wall_preference_weight: 6.0

@@ -1,0 +1,58 @@
+# ROS 2 / colcon build output (all workspaces)
+build/
+.build/
+.build_safe/
+install/
+log/
+logs/
+.logs/
+.colcon/
+
+# CMake generated files and compiled objects
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local editor settings and temporary files
+.vscode/
+.idea/
+.cache/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+!.env.sample
+.aws/
+.codex/
+.agents/
+
+# Runtime logs and ROS recordings
+*.log
+*.bag
+*.db3
+*.db3-shm
+*.db3-wal
+*.mcap

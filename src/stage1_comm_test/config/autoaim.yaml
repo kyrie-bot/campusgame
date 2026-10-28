@@ -1,0 +1,144 @@
+/**:
+  ros__parameters:
+    scene_units_per_meter: 3.0
+    camera.offset_x_m: 0.0
+    camera.offset_y_m: 0.0
+    # AutoAimState.position is the gimbal pivot; the optical center is 8 cm forward.
+    camera.offset_z_m: 0.08
+    display_every_n_frames: 2
+armor_detector:
+  ros__parameters:
+    # Imported stability options; existing calibration and control switches are preserved.
+    pnp.motion_noise.enabled: false
+    pnp.motion_noise.timing_sigma_ms: 0.0
+    pnp.motion_noise.max_rate_rad_s: 20.0
+    pnp.motion_noise.max_bearing_sigma_deg: 1.72
+    # Keep the requested reprojection window; extra detector windows are optional during tuning.
+    display: false
+    display.mask: false
+    number.enabled: true
+    number.model_path: ""
+    number.confidence_threshold: 0.7
+    # CNN labels: 1..5 numbered robots, 6 outpost (3 plates), 7 sentry (4), 8 base (1).
+    # These are classification IDs, not the player/robot indexes on the game HUD.
+    number.filter_unknown: false
+    # Short rendered bars have several degrees of pixel quantization/bloom axis error.
+    armor.max_light_angle_diff: 18.0
+    process_every_n_frames: 1
+    max_frame_age_ms: 200.0
+    # Measured emitting mesh endpoints in the locally installed Unity game (3 scene units/m).
+    pnp.refine_yaw: true
+    # The installed campus enemy prefab and outpost use the same small plate mesh.
+    # Apparent width/height can change with viewing angle; do not switch to real-robot large dimensions.
+    pnp.force_small_armor: true
+    pnp.armor_tilt_deg: 15.0
+    pnp.outpost_tilt_deg: -15.0
+    pnp.image_noise_px: 1.5
+    pnp.small_width_mm: 125.0
+    pnp.small_height_mm: 58.5
+    pnp.large_width_mm: 225.0
+    pnp.large_height_mm: 55.0
+armor_tracker:
+  ros__parameters:
+    # Imported stability options; existing calibration and control switches are preserved.
+    measurement.use_pixels: true
+    measurement.pixel_sigma_px: 2.0
+    measurement.pixel_gate: 40.0
+    outpost.center_gain_scale: 1.0
+    outpost.center_warmup_s: 1.5
+    outpost.center_max_sigma_m: 0.03
+    outpost.center_max_residual_m: 0.08
+    outpost.center_q: 0.00001
+    armor_count: 0  # auto: robots/sentry #7 4, outpost #6 3, base #8 1
+    outpost_number: 6
+    # The car's two radius groups are about 0.176/0.226 m; first plate parity is unknown.
+    marker_radius_m: 0.20
+    outpost_radius_m: 0.2602
+    initial_radius_sigma_m: 0.08
+    initial_height_sigma_m: 0.20
+    max_height_difference_m: 0.50
+    prediction_time_s: 0.15
+    lost_timeout_s: 0.35
+    # IDs 2/3/4 confirm sooner; sentry/structures retain the original settings.
+    field_robot_confirm_frames: 3
+    field_robot_min_confirm_time_s: 0.03
+    tracking_confirm_frames: 5
+    min_confirm_time_s: 0.05
+    # One selected aim target, plus a different-number candidate to avoid lock starvation.
+    max_tracks: 2
+    track_unknown: false
+    stationary_outpost: true
+    display: true
+    display.window: reprojection
+    display.show_future: false
+    display.show_measurements: true
+    debug.publish_image: false
+    max_frame_age_ms: 200.0
+    q_xy: 0.5
+    q_z: 0.1
+    q_yaw: 0.5
+    q_outpost_yaw: 0.08
+    q_radius: 0.00001
+    max_match_distance_m: 0.6
+    max_match_yaw_rad: 1.2
+    mahalanobis_gate: 25.0
+aim_solver:
+  ros__parameters:
+    # Pre-position at each learned height, then fire as that plate crosses the predicted ray.
+    outpost_number: 6
+    # Follow predicted rotating armor continuously; fixed passage mode remains optional.
+    outpost.fixed_aim.enabled: false
+    outpost.fixed_aim.min_yaw_rate_rad_s: 0.5
+    outpost.fixed_aim.multiple_heights: true
+    outpost.fire_tolerance_deg: 1.18
+    outpost.fire_settle_time_s: 0.0
+    # Unity checks actual optical-axis error <1.2 deg at the instant of firing.
+    # For a learned, confident outpost, do not duplicate that with delayed telemetry.
+    outpost.delegate_alignment_to_game: true
+    outpost.target_timeout_ms: 280.0
+    outpost.fire_coast_ms: 140.0
+    outpost.max_phase_sigma_rad: 0.12
+    outpost.max_center_sigma_m: 0.04
+    # Match tracker q_outpost_yaw; this is acceleration noise, not a fixed rotation speed.
+    outpost.phase_acceleration_noise: 0.08
+    command.control_period_ms: 10
+    # Imported stability options; existing calibration and control switches are preserved.
+    selection.slot_hysteresis: true
+    selection.slot_switch_margin: 0.08
+    selection.min_facing: 0.2
+    command.stabilizer.enabled: true
+    command.stabilizer.time_constant_ms: 0.0
+    command.stabilizer.yaw_deadband_deg: 0.03
+    command.stabilizer.pitch_deadband_deg: 0.03
+    command.stabilizer.max_yaw_rate_deg_s: 180.0
+    command.stabilizer.max_pitch_rate_deg_s: 120.0
+    display: false
+    display.show_prediction: false
+    target_number: 0
+    require_number: true
+    allow_temp_lost: true
+    command.mobile_feedback_compensation: true
+    prediction_time_s: 0.04
+    target_timeout_ms: 200.0
+    default_projectile_speed_mps: 23.5
+    gravity_mps2: 9.81
+    # Projectile spawns 0.25 scene units in front of the optical center.
+    muzzle.offset_x_m: 0.0
+    muzzle.offset_y_m: 0.0
+    muzzle.offset_z_m: 0.08333333333333333
+    # These user settings enable gimbal control and fire permission.
+    command.enabled: true
+    command.shoot: true
+    # Two-dimensional angle error, below the game's 1.2 degree execution gate.
+    command.fire_tolerance_deg: 1.15
+    command.fire_settle_time_s: 0.0
+    # Confirmed, observed mobile plate: keep predicting through short image gaps.
+    # Full plate covariance, fresh feedback and ballistic/alignment checks still apply.
+    command.mobile_fire_coast_ms: 250.0
+    command.mobile_prediction_sigma_m: 0.12
+    # Keep the fast frontal confirmation, but stay inside the real plate boundary.
+    command.mobile_plate_window_scale: 1.0
+    # Optional stricter geometric hit window; it can be much smaller than the angle tolerance.
+    command.fire_use_plate_window: false
+    # Allow learned geometry to select a plate that will face us at projectile impact.
+    command.fire_require_current_plate: false

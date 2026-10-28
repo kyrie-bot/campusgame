@@ -1,0 +1,33 @@
+# Campus public-landmark rigid projection; terrain and game motion remain unverified.
+path_follower:
+  ros__parameters:
+    simulation: false
+    command.enabled: false
+    map_alignment_verified: false
+    player_id: 1
+    map_frame: arena_reference
+    scene_units_per_m: 3.0
+    state_timeout_s: 0.2
+    plan_timeout_s: 0.45
+    enemy_timeout_s: 2.5
+    control_rate_hz: 50.0
+    max_speed_mps: 0.6
+    max_acceleration_mps2: 1.0
+    braking_acceleration_mps2: 0.7
+    lookahead_m: 0.45
+    collision_horizon_s: 0.6
+    drive_response_time_s: 0.1
+    position_tolerance_m: 0.03
+    release_tolerance_m: 0.06
+    stop_speed_mps: 0.03
+    settle_time_s: 0.35
+    max_path_deviation_m: 0.8
+    blocked_timeout_s: 6.0
+    follow_planner_projection: true
+    unity_to_reference:
+    - -0.0008608474967352598
+    - -0.9999996294707252
+    - 13.998143041025415
+    - 0.9999996294707253
+    - -0.0008608474967348818
+    - 9.103044551506406

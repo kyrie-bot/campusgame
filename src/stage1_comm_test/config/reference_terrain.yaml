@@ -1,0 +1,611 @@
+# Actual campus layout prior; rule-size nominal plane. Interior contours are not surveyed.
+schema_version: 1
+source:
+  description: Actual campus tactical-map contour prior, constrained by public-coordinate
+    landmarks; interior boundaries unsurveyed.
+  dimension_authority: 2027 campus rules V1.0.0 section 5.1, page 13
+  coordinate_authority: 2027 campus rules sections 7.3 and 7.6
+  layout_authority: Actual campus competition tactical map, compared with 2027 campus
+    rules Figure 2; four user-confirmed routes
+  nominal_width_m: 28.0
+  nominal_height_m: 15.0
+  scene_units_per_m: 3.0
+  air_wall_scene_units:
+  - 83.87385
+  - 45.0667
+  contour_measurement: UNSURVEYED_LAYOUT_PRIOR
+  image_numbers_used_as_measurements: false
+  image: ../maps/arena_registered/tactical_source.png
+  contour_note: Manual outlines rounded to 0.1m grid, including uncertain road lips.
+    These are contour priors, not measured passage widths.
+grid:
+  resolution_m: 0.1
+  frame_id: arena_campus
+  boundary_m: 0.1
+  geometry_verified: false
+  registration_verified: false
+  robot_radius_m: 0.3
+  safety_margin_m: 0.1
+regions:
+- name: central_highland
+  kind: platform
+  vertices_uv:
+  - - 0.445
+    - 0.145
+  - - 0.645
+    - 0.145
+  - - 0.616
+    - 0.208
+  - - 0.674
+    - 0.475
+  - - 0.674
+    - 0.57
+  - - 0.557
+    - 0.85
+  - - 0.35
+    - 0.85
+  - - 0.386
+    - 0.756
+  - - 0.328
+    - 0.54
+  - - 0.328
+    - 0.438
+- name: upper_road_and_turning_deck
+  kind: platform
+  vertices_uv:
+  - - 0.51
+    - 0.006
+  - - 0.872
+    - 0.006
+  - - 0.872
+    - 0.263
+  - - 0.798
+    - 0.263
+  - - 0.743244
+    - 0.263
+  - - 0.72
+    - 0.14
+  - - 0.645
+    - 0.14
+  - - 0.645
+    - 0.17
+  - - 0.51
+    - 0.17
+- name: lower_road_and_turning_deck
+  kind: platform
+  vertices_uv:
+  - - 0.49
+    - 0.994
+  - - 0.128
+    - 0.994
+  - - 0.128
+    - 0.737
+  - - 0.20199999999999996
+    - 0.737
+  - - 0.256756
+    - 0.737
+  - - 0.28
+    - 0.86
+  - - 0.355
+    - 0.86
+  - - 0.355
+    - 0.83
+  - - 0.49
+    - 0.83
+- name: upper_trapezoid_highland
+  kind: unknown
+  vertices_uv:
+  - - 0.106
+    - 0.006
+  - - 0.485
+    - 0.006
+  - - 0.485
+    - 0.05
+  - - 0.354
+    - 0.05
+  - - 0.272
+    - 0.3
+  - - 0.06
+    - 0.3
+  - - 0.06
+    - 0.22
+  - - 0.106
+    - 0.22
+  policy: NO_UNVERIFIED_CLIMB
+- name: lower_trapezoid_highland
+  kind: unknown
+  vertices_uv:
+  - - 0.894
+    - 0.994
+  - - 0.515
+    - 0.994
+  - - 0.515
+    - 0.95
+  - - 0.646
+    - 0.95
+  - - 0.728
+    - 0.7
+  - - 0.94
+    - 0.7
+  - - 0.94
+    - 0.78
+  - - 0.894
+    - 0.78
+  policy: NO_UNVERIFIED_CLIMB
+- name: upper_corner_facilities
+  kind: obstacle
+  vertices_uv:
+  - - 0
+    - 0
+  - - 0.102
+    - 0
+  - - 0.102
+    - 0.31
+  - - 0
+    - 0.31
+- name: lower_corner_facilities
+  kind: obstacle
+  vertices_uv:
+  - - 1
+    - 1
+  - - 0.898
+    - 1
+  - - 0.898
+    - 0.69
+  - - 1
+    - 0.69
+- name: upper_opposite_corner_facilities
+  kind: obstacle
+  vertices_uv:
+  - - 0.938
+    - 0
+  - - 1
+    - 0
+  - - 1
+    - 0.185
+  - - 0.938
+    - 0.185
+- name: lower_opposite_corner_facilities
+  kind: obstacle
+  vertices_uv:
+  - - 0.062000000000000055
+    - 1
+  - - 0
+    - 1
+  - - 0
+    - 0.815
+  - - 0.062000000000000055
+    - 0.815
+- name: red_fortress
+  kind: walkable_highland
+  vertices_uv:
+  - - 0.26535714285714285
+    - 0.5
+  - - 0.2501785714285714
+    - 0.5490747728811182
+  - - 0.21982142857142856
+    - 0.5490747728811182
+  - - 0.20464285714285713
+    - 0.5
+  - - 0.21982142857142856
+    - 0.45092522711888183
+  - - 0.2501785714285714
+    - 0.45092522711888183
+  footprint_verified: false
+  user_confirmed_climbable: true
+  render_as: walkable_grey_surface
+  note: User-confirmed climbable small side highland; free occupancy with grey terrain
+    annotation. Metric footprint and detailed access geometry remain unmeasured.
+- name: blue_fortress
+  kind: walkable_highland
+  vertices_uv:
+  - - 0.7953571428571429
+    - 0.5
+  - - 0.7801785714285715
+    - 0.5490747728811182
+  - - 0.7498214285714286
+    - 0.5490747728811182
+  - - 0.7346428571428572
+    - 0.5
+  - - 0.7498214285714285
+    - 0.45092522711888183
+  - - 0.7801785714285715
+    - 0.45092522711888183
+  footprint_verified: false
+  user_confirmed_climbable: true
+  render_as: walkable_grey_surface
+  note: User-confirmed climbable small side highland; free occupancy with grey terrain
+    annotation. Metric footprint and detailed access geometry remain unmeasured.
+- name: red_base
+  kind: obstacle
+  vertices_uv:
+  - - 0.10642857142857143
+    - 0.5
+  - - 0.10015228816828317
+    - 0.5282842712474619
+  - - 0.085
+    - 0.54
+  - - 0.06984771183171684
+    - 0.5282842712474619
+  - - 0.06357142857142858
+    - 0.5
+  - - 0.06984771183171684
+    - 0.4717157287525381
+  - - 0.085
+    - 0.46
+  - - 0.10015228816828316
+    - 0.4717157287525381
+  footprint_verified: false
+- name: blue_base
+  kind: obstacle
+  vertices_uv:
+  - - 0.9364285714285715
+    - 0.5
+  - - 0.9301522881682832
+    - 0.5282842712474619
+  - - 0.915
+    - 0.54
+  - - 0.8998477118317169
+    - 0.5282842712474619
+  - - 0.8935714285714286
+    - 0.5
+  - - 0.8998477118317169
+    - 0.4717157287525381
+  - - 0.915
+    - 0.46
+  - - 0.9301522881682832
+    - 0.4717157287525381
+  footprint_verified: false
+- name: central_energy_structure
+  kind: obstacle
+  vertices_uv:
+  - - 0.452
+    - 0.56
+  - - 0.471
+    - 0.585
+  - - 0.549
+    - 0.44
+  - - 0.53
+    - 0.414
+  footprint_verified: false
+  note: Only mechanism body is occupied; surrounding floor hexagon is not a wall.
+    Unsurveyed body contour.
+- name: red_outpost
+  kind: obstacle
+  vertices_uv:
+  - - 0.40464285714285714
+    - 0.755
+  - - 0.3988895974875929
+    - 0.7809272486435067
+  - - 0.385
+    - 0.7916666666666666
+  - - 0.3711104025124071
+    - 0.7809272486435067
+  - - 0.3653571428571429
+    - 0.755
+  - - 0.3711104025124071
+    - 0.7290727513564933
+  - - 0.385
+    - 0.7183333333333334
+  - - 0.3988895974875929
+    - 0.7290727513564933
+  footprint_verified: false
+- name: blue_outpost
+  kind: obstacle
+  vertices_uv:
+  - - 0.6346428571428572
+    - 0.245
+  - - 0.6288895974875929
+    - 0.27092724864350676
+  - - 0.615
+    - 0.2816666666666667
+  - - 0.6011104025124071
+    - 0.27092724864350676
+  - - 0.5953571428571428
+    - 0.245
+  - - 0.6011104025124071
+    - 0.21907275135649326
+  - - 0.615
+    - 0.20833333333333331
+  - - 0.6288895974875929
+    - 0.21907275135649323
+  footprint_verified: false
+- name: upper_fly_ramp_and_gap
+  kind: obstacle
+  vertices_uv:
+  - - 0.505
+    - 0.002
+  - - 0.588
+    - 0.002
+  - - 0.588
+    - 0.059
+  - - 0.505
+    - 0.059
+  policy: NO_JUMP_CONTROL
+- name: lower_fly_ramp_and_gap
+  kind: obstacle
+  vertices_uv:
+  - - 0.495
+    - 0.998
+  - - 0.41200000000000003
+    - 0.998
+  - - 0.41200000000000003
+    - 0.9410000000000001
+  - - 0.495
+    - 0.9410000000000001
+  policy: NO_JUMP_CONTROL
+- name: upper_small_ramp_above_pit
+  kind: obstacle
+  vertices_uv:
+  - - 0.485
+    - 0.05
+  - - 0.534
+    - 0.05
+  - - 0.534
+    - 0.074
+  - - 0.485
+    - 0.074
+  policy: NO_JUMP_CONTROL
+  terrain_feature: pit
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: User-confirmed pit flanking the small slope; never traversable by the planar
+    follower.
+- name: lower_small_ramp_below_pit
+  kind: obstacle
+  vertices_uv:
+  - - 0.515
+    - 0.95
+  - - 0.466
+    - 0.95
+  - - 0.466
+    - 0.926
+  - - 0.515
+    - 0.926
+  policy: NO_JUMP_CONTROL
+  terrain_feature: pit
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: User-confirmed pit flanking the small slope; never traversable by the planar
+    follower.
+- name: upper_small_ramp_below_pit
+  kind: obstacle
+  vertices_uv:
+  - - 0.485
+    - 0.15033333333333332
+  - - 0.534
+    - 0.15033333333333332
+  - - 0.534
+    - 0.18
+  - - 0.485
+    - 0.18
+  policy: NO_JUMP_CONTROL
+  terrain_feature: pit
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: User-confirmed pit flanking the small slope; never traversable by the planar
+    follower.
+- name: lower_small_ramp_above_pit
+  kind: obstacle
+  vertices_uv:
+  - - 0.515
+    - 0.8496666666666667
+  - - 0.466
+    - 0.8496666666666667
+  - - 0.466
+    - 0.82
+  - - 0.515
+    - 0.82
+  policy: NO_JUMP_CONTROL
+  terrain_feature: pit
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: User-confirmed pit flanking the small slope; never traversable by the planar
+    follower.
+walls:
+- name: upper_right_slope_upper_end
+  points_uv:
+  - - 0.712
+    - 0.14
+  - - 0.815
+    - 0.14
+  thickness_m: 0.1
+  terrain_feature: user_marked_slope_end_barrier
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: Explicit occupied horizontal end edge from user drawing; apply after ramp
+    openings so it cannot be cleared.
+- name: lower_left_slope_lower_end
+  points_uv:
+  - - 0.288
+    - 0.86
+  - - 0.185
+    - 0.86
+  thickness_m: 0.1
+  terrain_feature: user_marked_slope_end_barrier
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: Explicit occupied horizontal end edge from user drawing; apply after ramp
+    openings so it cannot be cleared.
+- name: upper_right_slope_lower_end
+  points_uv:
+  - - 0.743244
+    - 0.263
+  - - 0.808
+    - 0.263
+  thickness_m: 0.1
+  terrain_feature: user_marked_slope_end_barrier
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: Explicit occupied horizontal end edge from user drawing; apply after ramp
+    openings so it cannot be cleared.
+- name: lower_left_slope_upper_end
+  points_uv:
+  - - 0.256756
+    - 0.737
+  - - 0.192
+    - 0.737
+  thickness_m: 0.1
+  terrain_feature: user_marked_slope_end_barrier
+  user_confirmed_position: true
+  position_measurement: UNSURVEYED_REFERENCE
+  note: Explicit occupied horizontal end edge from user drawing; apply after ramp
+    openings so it cannot be cleared.
+ramp_access:
+  policy: only_user_marked_gates
+  ledge_thickness_m: 0.1
+  widths_verified: false
+  confirmed_entries:
+  - name: upper_left_direct
+    vertices_uv:
+    - - 0.474
+      - 0.078
+    - - 0.534
+      - 0.078
+    - - 0.534
+      - 0.15
+    - - 0.474
+      - 0.15
+    note: Actual slope footprint is separate from its ledge crossing gate; flat road
+      markings and upper deck are not slopes.
+    user_confirmed_position: true
+    position_measurement: UNSURVEYED_REFERENCE
+    width_verified: false
+    render_as: walkable_grey_surface
+    surface_vertices_uv:
+    - - 0.485
+      - 0.078
+    - - 0.534
+      - 0.078
+    - - 0.534
+      - 0.15
+    - - 0.485
+      - 0.15
+    visual_reference: 'user image 2/4: small slope at arrow level; upper platform
+      is flat'
+  - name: upper_right_turn
+    vertices_uv:
+    - - 0.72
+      - 0.14
+    - - 0.765
+      - 0.14
+    - - 0.798
+      - 0.263
+    - - 0.743244
+      - 0.263
+    note: Actual slope footprint is separate from its ledge crossing gate; flat road
+      markings and upper deck are not slopes.
+    user_confirmed_position: true
+    position_measurement: UNSURVEYED_REFERENCE
+    width_verified: false
+    render_as: walkable_grey_surface
+    surface_vertices_uv:
+    - - 0.72
+      - 0.14
+    - - 0.765
+      - 0.14
+    - - 0.798
+      - 0.263
+    - - 0.743244
+      - 0.263
+    visual_reference: User-marked horizontal road edge terminates slope; no slope
+      apron beyond that line. Lower-left is the 180-degree counterpart.
+  - name: lower_left_turn
+    vertices_uv:
+    - - 0.28
+      - 0.86
+    - - 0.235
+      - 0.86
+    - - 0.202
+      - 0.737
+    - - 0.256756
+      - 0.737
+    note: Actual slope footprint is separate from its ledge crossing gate; flat road
+      markings and upper deck are not slopes.
+    user_confirmed_position: true
+    position_measurement: UNSURVEYED_REFERENCE
+    width_verified: false
+    render_as: walkable_grey_surface
+    surface_vertices_uv:
+    - - 0.28
+      - 0.86
+    - - 0.235
+      - 0.86
+    - - 0.202
+      - 0.737
+    - - 0.256756
+      - 0.737
+    visual_reference: User-marked horizontal road edge terminates slope; no slope
+      apron beyond that line. Lower-left is the 180-degree counterpart.
+  - name: lower_right_direct
+    vertices_uv:
+    - - 0.526
+      - 0.922
+    - - 0.466
+      - 0.922
+    - - 0.466
+      - 0.85
+    - - 0.526
+      - 0.85
+    note: Actual slope footprint is separate from its ledge crossing gate; flat road
+      markings and upper deck are not slopes.
+    user_confirmed_position: true
+    position_measurement: UNSURVEYED_REFERENCE
+    width_verified: false
+    render_as: walkable_grey_surface
+    surface_vertices_uv:
+    - - 0.515
+      - 0.922
+    - - 0.466
+      - 0.922
+    - - 0.466
+      - 0.85
+    - - 0.515
+      - 0.85
+    visual_reference: 180-degree counterpart of arrow-level small slope
+unresolved_structures:
+- name: red_outpost
+  centre_uv:
+  - 0.385
+  - 0.755
+  blocked: true
+  note: Static body on central highland; footprint remains unmeasured.
+- name: blue_outpost
+  centre_uv:
+  - 0.615
+  - 0.245
+  blocked: true
+  note: Static body on central highland; footprint remains unmeasured.
+terrain_assumptions:
+- Only the four user-confirmed normal access routes can cross elevated ledges.
+- Flying ramps require jumping and are not enabled by the planar follower.
+- All interior contours, road widths and module footprints remain illustrative; game
+  geometry is not certified.
+- Slope footprints follow user image 1/3 diagonal road edge and image 2/4 arrow-level
+  small ramp, with 180-degree counterparts. Gate masks are navigation topology only,
+  never painted as slope footprints.
+- The two small slopes each have an upper and lower pit; only the middle slope is
+  traversable. Physical slope footprints replace automatic diagonal ledges, without
+  erasing explicit pits or structures.
+- The upper-right slope ends flush at the horizontal road edge, with no grey apron
+  below. The lower-left slope has the mirrored cutoff. Automatic ledge raster opening
+  thickness never extends the displayed physical slope.
+- User-marked horizontal end lines on upper-right/lower-left slopes are explicit occupied
+  barriers. Only the side opening between end barriers remains available; the planar
+  planner must not cross either end line.
+- The two small side highlands are user-confirmed climbable, shown grey with free
+  occupancy; they are distinct from the blocked bases and central highland cliff gates.
+- Campus screenshot controls layout, not the different 2026 field module layout. Public
+  world-coordinate landmark checks constrain the nominal rule-size projection; they
+  do not certify every contour.
+
+# Flat exit road beside the direct ramp; does not open pits or closed ledges.
+navigation_clearance_overrides:
+- name: direct_ramp_exit_road
+  safety_margin_m: 0.02
+  mirror_180: true
+  vertices_uv:
+  - [0.4642857142857143, 0.9266666666666666]
+  - [0.5892857142857143, 0.9266666666666666]
+  - [0.5892857142857143, 0.8666666666666667]
+  - [0.4642857142857143, 0.8666666666666667]

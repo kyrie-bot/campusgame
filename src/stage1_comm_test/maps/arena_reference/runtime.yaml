@@ -1,0 +1,13 @@
+static_grid_publisher:
+  ros__parameters:
+    frame_id: arena_reference
+    width_cells: 280
+    height_cells: 150
+    resolution_m: 0.1
+    origin_x_m: 0.0
+    origin_z_m: 0.0
+    map_directory: arena_reference
+    publish_standard_map: false
+    publish_terrain_annotations: true
+    geometry_verified: false
+    registration_verified: false

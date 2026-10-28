@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "fit_valid": true,
+  "geometry_sha256": "1679b2ea01fea407e6249f1a25e611e46a958edbc1e5651d095fba721647362b",
+  "scale_fitted": false,
+  "scene_units_per_m": 3.0,
+  "validation_unity_to_reference": [
+    -0.0020994529459205193,
+    -0.9999977961462354,
+    13.977986459917044,
+    0.9999977961462354,
+    -0.0020994529459203936,
+    9.104912558321294
+  ],
+  "recorded_pair_count": 6,
+  "raw_pair_count": 6,
+  "ignored_pairs": [],
+  "excluded_labels": [],
+  "distinct_landmark_count": 6,
+  "groups": [
+    [
+      "H_P5"
+    ],
+    [
+      "H_P6"
+    ],
+    [
+      "H_P7"
+    ],
+    [
+      "H_P8"
+    ],
+    [
+      "H_P9"
+    ],
+    [
+      "H_P10"
+    ]
+  ],
+  "residuals": [
+    {
+      "label": "H_P5",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        -8.594899563562304,
+        0.8329145567757742
+      ],
+      "reference_xy_m": [
+        13.19683481701286,
+        0.5406654343807763
+      ],
+      "validation_prediction_xy_m": [
+        13.163118325971764,
+        0.5082832717408259
+      ],
+      "validation_error_m": 0.046748328583645624,
+      "final_prediction_xy_m": [
+        13.172627690642852,
+        0.5074311601948089
+      ],
+      "final_error_m": 0.04111571412199488,
+      "holdout": false
+    },
+    {
+      "label": "H_P6",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        -6.0838818598275255,
+        7.3057859016187265
+      ],
+      "reference_xy_m": [
+        6.660731948565776,
+        3.0083179297597042
+      ],
+      "validation_prediction_xy_m": [
+        6.684989482875328,
+        3.0057059527462915
+      ],
+      "validation_error_m": 0.024397753886324737,
+      "final_prediction_xy_m": [
+        6.697597140883706,
+        3.012875778430123
+      ],
+      "final_error_m": 0.037145879840708475,
+      "holdout": false
+    },
+    {
+      "label": "H_P7",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        -1.0381782328945464,
+        10.024428685506185
+      ],
+      "reference_xy_m": [
+        3.974282888229476,
+        8.054528650646951
+      ],
+      "validation_prediction_xy_m": [
+        3.9557594731351973,
+        8.045690797084799
+      ],
+      "validation_error_m": 0.02052375604856467,
+      "final_prediction_xy_m": [
+        3.9746117829964724,
+        8.056237198947171
+      ],
+      "final_error_m": 0.0017399163951014834,
+      "holdout": true
+    },
+    {
+      "label": "H_P8",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        5.437593210311164,
+        0.9476826077415829
+      ],
+      "reference_xy_m": [
+        13.05835806132542,
+        14.514787430683919
+      ],
+      "validation_prediction_xy_m": [
+        13.018889969645238,
+        14.54050416992957
+      ],
+      "validation_error_m": 0.04710712194885144,
+      "final_prediction_xy_m": [
+        13.04577984592462,
+        14.539819936829527
+      ],
+      "final_error_m": 0.028014957908210788,
+      "holdout": false
+    },
+    {
+      "label": "H_P9",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        4.255080120904105,
+        -0.014229808534894669
+      ],
+      "reference_xy_m": [
+        14.083086053412462,
+        13.350277264325324
+      ],
+      "validation_prediction_xy_m": [
+        13.983282896596561,
+        13.360013176464506
+      ],
+      "validation_error_m": 0.1002769070903219,
+      "final_prediction_xy_m": [
+        14.008709869217261,
+        13.358135345473816
+      ],
+      "final_error_m": 0.07479014784565313,
+      "holdout": true
+    },
+    {
+      "label": "H_P10",
+      "landmark_key": null,
+      "landmark_description": null,
+      "unity_xz_m": [
+        3.927049704272339,
+        -10.769614518290817
+      ],
+      "reference_xy_m": [
+        24.690405539070227,
+        13.045286506469502
+      ],
+      "validation_prediction_xy_m": [
+        24.739332587481954,
+        13.054563906877211
+      ],
+      "validation_error_m": 0.04979885766368994,
+      "final_prediction_xy_m": [
+        24.764372977951297,
+        13.039363796390736
+      ],
+      "final_error_m": 0.07420418121172088,
+      "holdout": false
+    }
+  ],
+  "limit_m": 0.15,
+  "max_error_m": 0.1002769070903219,
+  "train_errors_m": [
+    0.046748328583645624,
+    0.024397753886324737,
+    0.04710712194885144,
+    0.04979885766368994
+  ],
+  "holdout_error_m": 0.1002769070903219,
+  "holdout_labels": [
+    "H_P7",
+    "H_P9"
+  ],
+  "geometry_verified": false,
+  "motion_ready": false,
+  "note": "Landmark rigid alignment only; terrain edges, slopes and robot clearance still require metric checks.",
+  "unity_to_reference": [
+    -0.0008608474967352598,
+    -0.9999996294707252,
+    13.998143041025415,
+    0.9999996294707253,
+    -0.0008608474967348818,
+    9.103044551506406
+  ],
+  "scope": "Six historical public robot-marker correspondences; no full-field geometry certification",
+  "source_pairs": "/home/tdt/Desktop/campusgame/reports/combat_navigation_20261008/alignment/historical_pairs.json",
+  "geometry_revision_note": "2026-10-23 user-requested 0.10m planning extension of upper pit edge beside lower-right direct ramp and mirrored partner; landmark projection unchanged."
+}

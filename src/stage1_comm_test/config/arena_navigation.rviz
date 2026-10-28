@@ -1,0 +1,147 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+- Class: rviz_common/Views
+  Name: Views
+Visualization Manager:
+  Class: ''
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Metre Grid
+    Enabled: true
+    Cell Size: 1
+    Plane: XY
+    Plane Cell Count: 40
+    Color: 90; 90; 90
+    Reference Frame: <Fixed Frame>
+  - Class: rviz_default_plugins/Map
+    Name: Occupancy Map
+    Enabled: true
+    Alpha: 1
+    Color Scheme: map
+    Draw Behind: false
+    Topic:
+      Value: /reference/map
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/Map
+    Name: Inflated Map (optional)
+    Enabled: false
+    Alpha: 0.5
+    Color Scheme: map
+    Topic:
+      Value: /reference/blocked_map
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/Path
+    Name: Dijkstra Path
+    Enabled: true
+    Color: 0; 255; 80
+    Alpha: 1
+    Line Style: Billboards
+    Line Width: 0.12
+    Topic:
+      Value: /planning/path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/Path
+    Name: Last planned route (display only)
+    Enabled: true
+    Color: 145; 145; 145
+    Alpha: 0.4
+    Line Style: Billboards
+    Line Width: 0.07
+    Topic:
+      Value: /planning/task_path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Grey slopes, small highlands and outposts
+    Enabled: true
+    Topic:
+      Value: /planning/terrain_markers
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Enemy Locations and Uncertainty
+    Enabled: true
+    Topic:
+      Value: /planning/enemy_markers
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Start and Goal
+    Enabled: true
+    Topic:
+      Value: /planning/points
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/Map
+    Name: Combined Planning Obstacles
+    Enabled: false
+    Alpha: 0.5
+    Color Scheme: map
+    Topic:
+      Value: /planning/dynamic_grid
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/Path
+    Name: Local collision-checked motion
+    Enabled: true
+    Color: 0; 170; 255
+    Line Style: Billboards
+    Line Width: 0.07
+    Topic:
+      Value: /navigation/local_path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Own robot and following status
+    Enabled: true
+    Topic:
+      Value: /navigation/robot_markers
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      Depth: 1
+  Enabled: true
+  Global Options:
+    Background Color: 45; 45; 45
+    Fixed Frame: arena_reference
+    Frame Rate: 30
+  Tools:
+  - Class: rviz_default_plugins/PublishPoint
+    Single click: true
+    Topic: /navigation/calibration_point
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/SetInitialPose
+    Topic: /planning/start
+  - Class: rviz_default_plugins/SetGoal
+    Topic: /planning/goal
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Current View
+      Target Frame: <Fixed Frame>
+      Scale: 16
+      X: 14
+      Y: 8.4
+      Angle: 0
+Window Geometry:
+  Width: 1200
+  Height: 850
